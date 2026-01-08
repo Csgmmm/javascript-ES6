@@ -53,13 +53,37 @@
         },
       };
 
+      //Cria uma função que faça console.log de cada nome de empresa, na seguinte estrutura:
       companies.map(function (item) {
         console.log(
           `O nome desta empresa é ${item.name} e foi fundada em ${item.start}`
         );
       });
 
+      //Cria uma função que devolva as empresas iniciadas após 1987
+      const empresasApos1987 = companies.filter((item) => item.start > 1987);
 
+      //Cria uma função que devolva a soma dos valores do array ages usando reduce;
+      const initialValue = 0;
+      const somaIdades = ages.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        initialValue
+      );
+
+      //Faz console.log de um novo objeto que tenha as chaves de name e category iguais a companies[0], usando o destructuring de objects.
+
+      const empresa = { name: "Company One", category: "Finance" };
+      const { name, category } = empresa;
+
+      //Faz destructuring da chave street e cria uma variável chamada street do objet person.
+      const {
+        address: { street },
+      } = person;
+
+      //Cria uma função que avalia as empresas que tenham uma data de início superior a 1996 e inferior a 2004, inclusivé.
+      const empresasEntre1996e2004 = companies.filter(
+        (item) => item.start >= 1996 && item.start <= 2004
+      );
     </script>
   </body>
 </html>
