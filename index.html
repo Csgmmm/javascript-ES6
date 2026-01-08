@@ -5,38 +5,61 @@
   </head>
   <body>
     <script>
-      const estudantes = [
-        { id: 1, nome: "Carla", idade: 30 },
-        { id: 2, nome: "João", idade: 25 },
-        { id: 3, nome: "Ana", idade: 28 },
-        { id: 4, nome: "Pedro", idade: 22 },
+      //Exercicio 1
+      //Ponto 1:
+
+      console.log(
+        (function () {
+          return "Isto foi demasiado rápido!";
+        })()
+      );
+
+      //Ponto 2:
+
+      function formulario(label) {
+        return function (input) {
+          return `${label}: ${input}`;
+        };
+      }
+      const nomeInput = formulario("Nome");
+
+      //Exercicio 2
+      const companies = [
+        { name: "Company One", category: "Finance", start: 1981, end: 2004 },
+        { name: "Company Two", category: "Retail", start: 1992, end: 2008 },
+        { name: "Company Three", category: "Auto", start: 1999, end: 2007 },
+        { name: "Company Four", category: "Retail", start: 1989, end: 2010 },
+        {
+          name: "Company Five",
+          category: "Technology",
+          start: 2009,
+          end: 2014,
+        },
+        { name: "Company Six", category: "Finance", start: 1987, end: 2010 },
+        { name: "Company Seven", category: "Auto", start: 1986, end: 1996 },
+        {
+          name: "Company Eight",
+          category: "Technology",
+          start: 2011,
+          end: 2016,
+        },
+        { name: "Company Nine", category: "Retail", start: 1981, end: 1989 },
       ];
+      const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+      const person = {
+        name: "Costas",
+        address: {
+          street: "Lalaland 12",
+        },
+      };
 
-      //Eu vou buscar o parametro da função que esta dentro dos parentesis, para obter um resultado na consola.  //(idStudy é o parametro da funcao)
+      companies.map(function (item) {
+        console.log(
+          `O nome desta empresa é ${item.name} e foi fundada em ${item.start}`
+        );
+      });
 
-      //criar uma função que receba um id como parâmetro e retorne o estudante correspondente a esse id.
 
-      const encontrarEstudantePorId = (idStudy) =>
-        estudantes.find((estudante) => estudante.id === idStudy);
-      //resposta: { id: 3, nome: 'Ana', idade: 28 }
-
-      //criar uma função que retorne um array com os nomes de todos os estudantes, formatados como "Nome do estudante: [NOME]".
-      const listarNomes = () =>
-        estudantes.map((estudante) => `Nome do estudante: ${estudante.nome}`);
-      //resposta: ['Nome do estudante: Carla', 'Nome do estudante: João', 'Nome do estudante: Ana', 'Nome do estudante: Pedro']
-
-      //criar uma função que filtre e retorne apenas os estudantes com idade maior do que um valor passado por parâmetro.
-      const filtrarPorIdade = (idadeEstudante) =>
-        estudantes.filter((item) => item.idade > idadeEstudante);
-      //resposta filtrarPorIdade(25) [{ id: 1, nome: 'Carla', idade: 30 }, { id: 3, nome: 'Ana', idade: 28 }]
-
-      //todas as funções devem ter valores padrao.
-      const filtrarPorIdade1 = (
-        idadeEstudante = 18 //o = 18 é o valor padrao no caso da consola nao receber nenhum valor, aparece o valor padrao. (obterEstudanteMaioridade() - Array [])
-      ) => estudantes.filter((item) => item.idade > idadeEstudante);
-
-      const encontrarEstudantePorId2 = (idStudy = 1) =>
-        estudantes.find((estudante) => estudante.id === idStudy);
     </script>
   </body>
 </html>
